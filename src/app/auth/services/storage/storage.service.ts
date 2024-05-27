@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+
+
 const TOKEN = "token";
 const USER = "user";
 
@@ -7,8 +9,9 @@ const USER = "user";
   providedIn: 'root'
 })
 export class StorageService {
+  
 
-  constructor() { }
+  constructor() {}
   
   static saveToken(token:string):void{
     window.localStorage.removeItem(TOKEN);
@@ -19,8 +22,14 @@ export class StorageService {
     window.localStorage.setItem(USER, JSON.stringify(user));
   }
 
- static getToken() {
- return window.localStorage.getItem(TOKEN);
+  static getUserId(): string {
+    const user = this.getUser();
+    if (user == null) {return '';}
+    return user.id;
+  }
+
+static getToken() {
+  return window.localStorage.getItem(TOKEN);
  }
 
 static getUser(){

@@ -18,14 +18,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 
-
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

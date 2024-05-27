@@ -11,22 +11,21 @@ import { every } from 'rxjs';
 export class AppComponent {
   title = 'Car_rental_with_module-master';
 
-isCustomerLoggedIn:boolean=StorageService.isCustomerLoggedIn();
-isAdminLoggedIn:boolean=StorageService.isAdminLoggedIn();
+  isCustomerLoggedIn:boolean=StorageService.isCustomerLoggedIn();
+  isAdminLoggedIn:boolean=StorageService.isAdminLoggedIn();
 
-constructor(private router: Router) { }
+  constructor(private router: Router){ }
 
-ngOnInit() {
+ ngOnInit(){
   this.router.events.subscribe(event => {
-    if(event.constructor.name === "Navigation"){
-  this.isAdminLoggedIn = StorageService.isAdminLoggedIn();
-  this.isCustomerLoggedIn = StorageService.isCustomerLoggedIn();
- }
-  })
+    if(event.constructor.name === "NavigationEnd"){
+      this.isAdminLoggedIn = StorageService.isAdminLoggedIn();
+      this.isCustomerLoggedIn = StorageService.isCustomerLoggedIn();
+    }
+   })
+  }
+  logout(){
+    StorageService.logout();
+    this.router.navigateByUrl("/login");
+  }
 }
-logout(){
-  StorageService.logout();
-  this.router.navigateByUrl("/login");
-}
-}
-  
