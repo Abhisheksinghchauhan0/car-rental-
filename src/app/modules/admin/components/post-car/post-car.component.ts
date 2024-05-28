@@ -20,7 +20,7 @@ export class PostCarComponent {
   listofBrand = ["Mahendra","TATA","TESLA","VOLVO","LAND ROVER",
     "Jaguar","Maruti Suzuki","Toyota","BMW", "Audi","Ferrari","Honda" ];
   listofType = ["Diesel","Petrol","CNG","Electric"];
-  listofColor = ["Red","White","Black","Silver","Grey"];
+  listofColor = ["Red","White","Black","Silver","Grey","Yellow"];
   listoftTransmission = ["Mannual","Automatic"];
 
   constructor(private fb: FormBuilder,
