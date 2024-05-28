@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { StorageService } from '../../../auth/services/storage/storage.service';
 
-const BASIC_URL = ["Http://localhost:9000"]
+const BASIC_URL = ["http://localhost:9000"]
 
 @Injectable({
   providedIn: 'root'
